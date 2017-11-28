@@ -15,6 +15,7 @@
    <title>Red Ball Survey</title>
    <link href="rb_reset.css" rel="stylesheet" />
    <link href="rb_styles.css" rel="stylesheet" />
+   <link rel="stylesheet" href="rb_forms.css">
    <script type="text/javascript" src="rb_formsubmit.js"></script>
 
 </head>
@@ -53,26 +54,42 @@
       <form id="survey" action="http://www.example.com/redball/survey" method="post">
                 <fieldset id="custInfo">
                         <legend>Customer Information</legend>
-                        Name*
-                        <input type="text" name="custName" id="name">
 
-                        Street Address
-                        <input type="text" name="custStreet" id="street">
+                        <div class="formRow">
+                                <label for="name">Name*</label>
+                                <input type="text" name="custName" id="name" placeholder="first and last name">
+                        </div>
 
-                        City
-                        <input type="text" name="custCity" id="city">
+                        <div class="formRow">
+                                <label for="street">Street Address</label>
+                                <input type="text" name="custStreet" id="street">
+                        </div>
 
-                        State
-                        <input type="text" name="custState" id="state">
+                        <div class="formRow">
+                                <label for="city">City</label>
+                                <input type="text" name="custCity" id="city" value="Ormond Beach">
+                        </div>
 
-                        Postal Code
-                        <input type="text" name="custZip" id="zip">
+                        <div class="formRow">
+                                <label for="state">State</label>
+                                <input type="text" name="custState" id="state" value="FL">
+                        </div>
 
-                        Phone Number
-                        <input type="text" name="custPhone" id="phone">
+                        <div class="formRow">
+                                <label for="zip">Postal Code</label>
+                                <input type="text" name="custZip" id="zip" placeholder="nnnnn (-nnnn)">
+                        </div>
 
-                        E-mail*
-                        <input type="text" name="custEmail" id="email">
+                        <div class="formRow">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" name="custPhone" id="phone" placeholder="(nnn) nnn-nnnn">
+                        </div>
+
+                        <div class="formRow">
+                                <label for="email">E-mail*</label>
+                                <input type="text" name="custEmail" id="email">
+                        </div>
+
                 </fieldset>
 
                 <fieldset id="expInfo">
