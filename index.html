@@ -57,7 +57,7 @@
 
                         <div class="formRow">
                                 <label for="name">Name*</label>
-                                <input type="text" name="custName" id="name" placeholder="first and last name">
+                                <input type="text" name="custName" id="name" placeholder="first and last name" required>
                         </div>
 
                         <div class="formRow">
@@ -77,17 +77,17 @@
 
                         <div class="formRow">
                                 <label for="zip">Postal Code</label>
-                                <input type="text" name="custZip" id="zip" placeholder="nnnnn (-nnnn)">
+                                <input type="text" name="custZip" id="zip" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$">
                         </div>
 
                         <div class="formRow">
                                 <label for="phone">Phone Number</label>
-                                <input type="text" name="custPhone" id="phone" placeholder="(nnn) nnn-nnnn">
+                                <input type="text" name="custPhone" id="phone" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\s*)?\d{3}[\s-]?\d{4}$">
                         </div>
 
                         <div class="formRow">
                                 <label for="email">E-mail*</label>
-                                <input type="text" name="custEmail" id="email">
+                                <input type="email" name="custEmail" id="mail" required>
                         </div>
 
                         <div class="formRow">
@@ -101,6 +101,28 @@
                                 </select>
                         </div>
 
+                        <!-- datalist -->
+                        <div class="formRow">
+                                <label for="dish">What's your favorite dish?</label>
+                                <input type="text" name="favDish" id="dish" list="dishType">
+                                <datalist id="dishType">
+                                        <option value="Antipasto Pizza" />
+                                        <option value="Big Kahuna Pizza" />
+                                        <option value="BBQ Chicken Pizza" />
+                                        <option value="Mediterranean Herb Pizza" />
+                                        <option value="Pasta Rolls" />
+                                        <option value="Pasto Artichoke Pizza" />
+                                </datalist>
+
+                        </div>
+
+                        <!-- spinner  -->
+                        <div class="formRow">
+                                <label for="dineSpin">How many times do you dine out per month?</label>
+                                <input type="number" name="dineOut" id="dineSpin" value="1" step="1" min="0" max="20">
+                        </div>
+
+                        <!-- checkbox -->
                         <input type="checkbox" name="mailMe" id="mailCB" value="yes">
                         <label for="mailCB">Add me to your mailing list for great coupons and specials!</label>
 
@@ -155,9 +177,23 @@
                                 </fieldset>
                         </div>
 
+                        <!-- slider -->
+                        <div class="formRow">
+                                <label for="rangeBox">Rate the overall service<br />(0=poor; 10=great)</label>
+                                0
+                                <input type="range" name="serviceRate" id="rangeBox" value="5" step="1" min="0" max="10">
+                                10
+                        </div>
+
                         <label for="commBox">Tell us more about your experience!</label>
                         <textarea name="custExp" id="commBox" rows="" cols=""></textarea>
                 </fieldset>
+
+                <!-- buttons -->
+                <div id="buttons">
+                        <input type="submit" value="Submit My Survey">
+                        <input type="reset" value="Cancel">
+                </div>
       </form>
 
 
